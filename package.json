@@ -1,0 +1,32 @@
+{
+	"name": "shoply-backend",
+	"version": "1.0.0",
+	"description": "e-commerce shop back-end",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"engines": {
+		"node": "14.16.1"
+	},
+	"keywords": [],
+	"author": "Uri Reichman",
+	"license": "ISC",
+	"dependencies": {
+		"bcrypt": "^5.0.1",
+		"compression": "^1.7.4",
+		"config": "^3.3.6",
+		"express": "^4.17.1",
+		"express-async-errors": "^3.1.1",
+		"express-routes-path": "^1.0.0",
+		"helmet": "^4.6.0",
+		"joi": "^17.4.0",
+		"joi-objectid": "^3.0.1",
+		"joi-password-complexity": "^5.1.0",
+		"jsonwebtoken": "^8.5.1",
+		"lodash": "^4.17.21",
+		"mongoose": "^5.12.7",
+		"winston": "^3.3.3",
+		"winston-mongodb": "^5.0.7"
+	}
+}
