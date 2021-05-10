@@ -6,5 +6,5 @@ module.exports = {
 	db: config.get("db"),
 	user: config.get("user"),
 	secret: config.get("secret"),
-	port: process.env.PORT || 3000
+	port: process.env.PORT || 3001
 };

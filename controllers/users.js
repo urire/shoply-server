@@ -40,5 +40,5 @@ module.exports.login = async (req, res) => {
 	const validPassword = await user.checkPassword(password);
 	if (!validPassword) return res.status(400).send("Invalid password");
 
-	res.send(user.authToken());
+	res.send({ token: user.authToken(), user: _.pick(user, ["_id", "name", "email", "isAdmin"]) });
 };
