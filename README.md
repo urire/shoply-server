@@ -60,3 +60,4 @@ REST API for shoply application.
         ]
 
     DELETE /api/orders/:id (id must be a valid object id + admins only)
+# shoply-server
