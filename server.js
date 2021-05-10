@@ -4,12 +4,14 @@ const log = require("./middleware/log");
 const error = require("./middleware/error");
 const route = require("express-routes-path");
 const compression = require("compression");
+const cors = require("cors");
 const helmet = require("helmet");
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 app.use(helmet());
 app.use(compression());
 app.use(error);
