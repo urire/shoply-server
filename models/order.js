@@ -1,41 +1,44 @@
 const mongoose = require("mongoose");
 const validator = require("../services/validator");
 
-const schema = new mongoose.Schema({
-	email: {
-		type: String,
-		required: true,
-		minlength: 5,
-		maxlength: 255
+const schema = new mongoose.Schema(
+	{
+		email: {
+			type: String,
+			required: true,
+			minlength: 5,
+			maxlength: 255
+		},
+		name: {
+			type: String,
+			required: true,
+			minlength: 5,
+			maxlength: 50
+		},
+		address: {
+			type: String,
+			required: true,
+			minlength: 5,
+			maxlength: 255
+		},
+		total: {
+			type: Number,
+			required: true,
+			min: 0
+		},
+		cart: {
+			type: [
+				{
+					title: { type: String, required: true },
+					price: { type: Number, required: true },
+					count: { type: Number, required: true }
+				}
+			],
+			required: true
+		}
 	},
-	name: {
-		type: String,
-		required: true,
-		minlength: 5,
-		maxlength: 50
-	},
-	address: {
-		type: String,
-		required: true,
-		minlength: 5,
-		maxlength: 255
-	},
-	total: {
-		type: Number,
-		required: true,
-		min: 0
-	},
-	cart: {
-		type: [
-			{
-				title: { type: String, required: true },
-				price: { type: Number, required: true },
-				count: { type: Number, required: true }
-			}
-		],
-		required: true
-	}
-});
+	{ timestamps: true }
+);
 
 schema.statics.validate = order => {
 	const schema = {
